@@ -21,7 +21,7 @@ cd portafolio-api
 
 Iniciar XAMPP y activar los servicios Apache y MySQL
 Acceder a phpMyAdmin (http://localhost/phpmyadmin)
-Crear una nueva base de datos llamada portafolio
+Crear una nueva base de datos llamada "portafolio2"
 Importar el archivo SQL incluido en el proyecto
 
 Configurar Postman:
