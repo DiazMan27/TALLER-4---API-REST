@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8"> <!-- Codificación de caracteres UTF-8 para soportar caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport para diseño responsive -->
+    <title>Portfolio | Leandro Díaz</title> <!-- Título que aparece en la pestaña del navegador -->
+    <meta name="Portafolio" content=" echo con html, css y JavaScript, implementacion de dom y un formulario con js">
+    <!-- Enlaces a hojas de estilo y fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="Assets/css/stylesPortFolio.css"> <!-- Hoja de estilos personalizada -->
+</head>
+<body>
+    <!-- Encabezado de la página -->
+    <header class="container">
+        <!-- Botón para cambiar el tema (claro/oscuro) -->
+        <button class="theme-toggle" aria-label="Cambiar tema" title="Has click y cambia de tema la pagina">
+            <i class="fas fa-moon"></i> <!-- Icono de luna (tema oscuro) -->
+        </button>
+        
+        <!-- Título principal -->
+        <h1>LeanCode</h1>
+        
+        <!-- Navegación principal -->
+        <nav>
+            <ul>
+                <!-- Enlaces internos a las diferentes secciones -->
+                <li><a href="#about" title="Haz click para conocerme mas">Sobre mí</a></li>
+                <li><a href="#skills" title="Aqui podras encontrar las habilidades que tengo">Habilidades</a></li>
+                <li><a href="#projects" title="Vee algunos de mis proyectos principales">Proyectos</a></li>
+                <li><a href="#contact" title="Contactate conmigo si tienes alguna duda">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección "Sobre mí" -->
+    <section id="about">
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <div class="about-content">
+                <!-- Breve descripción personal -->
+                <p>Hola! Soy Leandro Díaz, actualmente vivo en Carahue, Chile. Estoy estudiando técnico en informática en la Universidad Católica de Temuco, y mis aspiraciones son poder mejorar mis habilidades en el diseño web.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Habilidades -->
+    <section id="skills">
+        <div class="container">
+            <h2>Habilidades</h2>
+            <div class="skills-container">
+                <!-- Botón para mostrar/ocultar habilidades adicionales -->
+                <button id="toggleSkills" class="toggle-btn" title="Haz click para ver mi demas habilidades">Mostrar Herramientas</button>
+                <!-- Contenedor donde se mostrarán las habilidades (se llena dinámicamente con JS) -->
+                <div id="skillsDisplay" class="skills-grid"></div>
+            </div>
+        </div>
+    </section>
+    <!-- En tu sección de proyectos -->
+    <section id="projects">
+        <div class="container">
+            <h2>Proyectos Destacados</h2>
+            <div id="contenedor-proyectos" class="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contact-content">
+                <!-- Información de contacto -->
+                <div class="contact-info">
+                    <h3>Pongámonos en contacto</h3>
+                    <p>Si tienes algún proyecto en mente o quieres consultarme algo, no dudes en escribirme.</p>
+                    
+                    <!-- Métodos de contacto -->
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Correo</h4>
+                                <a href="mailto:leandromanriquez709@gmail.com">leandromanriquez709@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Redes sociales -->
+                    <div class="social-links">
+                        <a href="https://github.com/DiazMan27" class="social-link" target="_blank" title="Presiona para ver mi github juntos a mis proyectos"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/ljdm_ljdm" class="social-link" target="_blank"><i class="fab fa-instagram" title="Conoceme en instagram :D"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Formulario de contacto -->
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" class="form-control" required title="Ingrese su nombre completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required title="Ingrese su correo ">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" class="form-control" required title="El servicio que necesita">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" class="form-control" required title="Escribame un mensaje detallandome mas lo que necesita"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" title="Has click para confirma el envio">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo/marca del footer -->
+                <div class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    <span>LeanCode</span>
+                </div>
+                <!-- Información de copyright -->
+                <div class="footer-copy">
+                    &copy; <span id="current-year"></span> Leandro Díaz. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="Assets/js/scripPortFolio.js"></script>
+</body>
+</html>
