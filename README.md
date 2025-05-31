@@ -1,7 +1,7 @@
-API REST para Portafolio Personal
+#API REST para Portafolio Personal
 Este proyecto implementa una API RESTful para gestionar proyectos de portafolio localmente, diseñada para probar los principales métodos HTTP: GET, POST, PUT, PATCH, DELETE, HEAD y OPTIONS.
 
-Requisitos Técnicos
+##Requisitos Técnicos
 XAMPP (versión 8.1+ recomendada)
 
 Postman (para pruebas de API)
@@ -10,7 +10,7 @@ PHP (8.0+ incluido en XAMPP)
 
 MySQL (incluido en XAMPP)
 
-Configuración Inicial
+###Configuración Inicial
 Clonar el repositorio:
 
 bash
