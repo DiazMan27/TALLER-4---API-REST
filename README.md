@@ -14,7 +14,7 @@ MySQL (incluido en XAMPP)
 Clonar el repositorio:
 
 bash
-git clone [URL_DEL_REPOSITORIO]
+git clone [(https://github.com/DiazMan27/TALLER-4---API-REST.git]
 cd portafolio-api
 
 ## Importar la base de datos:
