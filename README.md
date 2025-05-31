@@ -1,47 +1,100 @@
-# TALLER 4 - API REST
+API REST para Portafolio Personal
+Este proyecto implementa una API RESTful para gestionar proyectos de portafolio localmente, diseñada para probar los principales métodos HTTP: GET, POST, PUT, PATCH, DELETE, HEAD y OPTIONS.
 
-Este es un portafolio personal adaptado para ser usado para probar metodos como: GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS.
-Es un proyeto echo localmente usando XAMPP y POSTMAN
-A continuación estan las indicaciones para ejecutarlo en su equipo
+Requisitos Técnicos
+XAMPP (versión 8.1+ recomendada)
 
-1) hacer un gitclone del proyecto
-2) installar xampp y postman
-3) importar base de datos en phpmyadmin ( base de datos en los archivos )
-4) iniciar xampp con APACHE y MYSQL (Click en admin para ver la BDD)
-5) iniciar postman y comenzar a probar los metodos
+Postman (para pruebas de API)
 
-## GET
-GET http://localhost/portafolio/api/proyectos.php?id=1
-configurar id segun los proyectos en la BDD
-## POST
-POST http://localhost/portafolio/api/proyectos.php
-Body (raw JSON):
+PHP (8.0+ incluido en XAMPP)
+
+MySQL (incluido en XAMPP)
+
+Configuración Inicial
+Clonar el repositorio:
+
+bash
+git clone [URL_DEL_REPOSITORIO]
+cd portafolio-api
+Importar la base de datos:
+
+Iniciar XAMPP y activar los servicios Apache y MySQL
+
+Acceder a phpMyAdmin (http://localhost/phpmyadmin)
+
+Crear una nueva base de datos llamada portafolio
+
+Importar el archivo SQL incluido en el proyecto
+
+Configurar Postman:
+
+Importar la colección de ejemplos (si está disponible)
+
+O configurar manualmente siguiendo los ejemplos abajo
+
+Endpoints Disponibles
+1. Obtener Proyectos (GET)
+URL: http://localhost/portafolio/api/proyectos.php
+
+Parámetro	Tipo	Descripción
+id	int	(Opcional) ID de proyecto específico
+Ejemplo de respuesta:
+
+json
+[
+    {
+        "id": 1,
+        "titulo": "Sitio Web Personal",
+        "descripcion": "Portafolio profesional",
+        "imagen": "web.jpg",
+        "enlace": "https://ejemplo.com",
+        "fecha_creacion": "2023-10-15"
+    }
+]
+2. Crear Proyecto (POST)
+URL: http://localhost/portafolio/api/proyectos.php
+
+Body (JSON):
+
+json
 {
     "titulo": "Nuevo Proyecto",
-    "descripcion": "Descripción del nuevo proyecto",
-    "imagen": "img/proyecto7.png",
-    "enlace": "https://github.com/usuario/proyecto7"
+    "descripcion": "Descripción detallada",
+    "imagen": "proyecto.jpg",
+    "enlace": "https://github.com/mi-usuario/proyecto"
 }
-## PUT
-PUT http://localhost/portafolio/api/proyectos.php?id=1
-Body (raw JSON):
-{
-    "titulo": "Proyecto 1 Actualizado",
-    "descripcion": "Nueva descripción",
-    "imagen": "img/proyecto1-actualizado.png",
-    "enlace": "https://github.com/usuario/proyecto1-actualizado"
-}
-## PATCH
-   PATCH http://localhost/portafolio/api/proyectos.php?id=2
-Body (raw JSON):
-{
-    "descripcion": "Solo actualizo la descripción"
-}
-## DELETE
-   DELETE http://localhost/portafolio/api/proyectos.php?id=3
-## HEAD
-   HEAD http://localhost/portafolio/api/proyectos.php?id=1
-## OPTIONS
-   OPTIONS http://localhost/portafolio/api/proyectos.php
-   
+Campos obligatorios: titulo, descripcion
 
+3. Actualizar Proyecto (PUT)
+URL: http://localhost/portafolio/api/proyectos.php?id=[ID]
+
+Body (JSON):
+
+json
+{
+    "titulo": "Título actualizado",
+    "descripcion": "Nueva descripción",
+    "imagen": "nueva-imagen.jpg",
+    "enlace": "https://nuevo-enlace.com"
+}
+Nota: PUT requiere todos los campos del proyecto.
+
+4. Actualización Parcial (PATCH)
+URL: http://localhost/portafolio/api/proyectos.php?id=[ID]
+
+Ejemplo:
+
+json
+{
+    "descripcion": "Solo actualizo este campo"
+}
+5. Eliminar Proyecto (DELETE)
+URL: http://localhost/portafolio/api/proyectos.php?id=[ID]
+
+Respuesta exitosa:
+
+json
+{
+    "status": "success",
+    "message": "Proyecto eliminado"
+}
