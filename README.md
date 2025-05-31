@@ -17,6 +17,7 @@ bash
 git clone [(https://github.com/DiazMan27/TALLER-4---API-REST.git]
 cd portafolio-api
 
+dejar carpeta en /xammp/htdocs.
 ## Importar la base de datos:
 
 Iniciar XAMPP y activar los servicios Apache y MySQL
